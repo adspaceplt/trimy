@@ -1,0 +1,34 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+.menu-item:hover>.menu-link,
+.menu-item.current>.menu-link {
+	color: #053097;
+	font-weight: bold !important;
+}
+
+#footer {
+	background: #053097;
+}
+
+ul.icons-list {
+	list-style: none;
+}
+
+ul.icons-list li{
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+
+ul.icons-list li i{
+	color: rgb(62, 163, 62);
+	margin-right: 5px;
+}
+
+#page-title h1{
+	font-size: 3.5rem;
+}

@@ -32,3 +32,18 @@ ul.icons-list li i{
 #page-title h1{
 	font-size: 3.5rem;
 }
+.mobile-padding .card-body h4{
+	min-height: 50px;
+}
+.mobile-padding .card-body a {
+	white-space: normal;
+}
+@media(max-width: 767px){
+	.mobile-padding .card-body h4{
+		min-height: 80px;
+	}
+	.mobile-padding{
+		padding: 0 5px;
+	}
+
+}

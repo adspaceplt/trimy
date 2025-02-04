@@ -129,7 +129,7 @@
 								81000 Kulai, Johor<br>
 							</address>
 							<abbr title="Phone Number"><strong>Phone:</strong></abbr> +60127799808<br>
-							<abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
+							<!-- <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br> -->
 							<abbr title="Email Address"><strong>Email:</strong></abbr> <a href="mailto:enquiry@trimyfire.com.my" style="color: #053097">enquiry@trimyfire.com.my</a>
 						</div>
 						<div class="col-md-5">
@@ -153,8 +153,7 @@
 									style="color: #053097">enquiry@trimyfire.com.my</a>
 							</div>
 							<div class="col-lg-6 mt-5 mt-lg-0">
-								<form class="mb-0" id="template-contactform" name="template-contactform"
-									action="include/form.php" method="post">
+								<form class="mb-0" id="contactform" name="contactform">
 
 									<div class="form-process">
 										<div class="css3-spinner">
@@ -163,47 +162,47 @@
 									</div>
 									<div class="row">
 										<div class="col-12 form-group">
-											<label for="template-contactform-name">Name<small
+											<label for="contactform-name">Name<small
 													class="text-danger">*</small></label>
-											<input type="text" id="template-contactform-name"
-												name="template-contactform-name" value=""
+											<input type="text" id="contactform-name"
+												name="contactform-name" value=""
 												class="form-control required" />
 										</div>
 
 										<div class="col-12 form-group">
-											<label for="template-contactform-phone">Phone<small
+											<label for="contactform-phone">Phone<small
 													class="text-danger">*</small></label>
-											<input type="text" id="template-contactform-phone"
-												name="template-contactform-phone" value=""
+											<input type="text" id="contactform-phone"
+												name="contactform-phone" value=""
 												class="required form-control" />
 										</div>
 
 										<div class="w-100"></div>
 
 										<div class="col-12 form-group">
-											<label for="template-contactform-company">Company</label>
-											<input type="text" id="template-contactform-company" name="company" value=""
+											<label for="contactform-company">Company</label>
+											<input type="text" id="contactform-company" name="company" value=""
 												class="form-control" />
 										</div>
 
 										<div class="w-100"></div>
 
 										<div class="col-12 form-group">
-											<label for="template-contactform-message">Message<small
+											<label for="contactform-message">Message<small
 													class="text-danger">*</small></label>
-											<textarea class="required form-control" id="template-contactform-message"
-												name="template-contactform-message" rows="6" cols="30"></textarea>
+											<textarea class="required form-control" id="contactform-message"
+												name="contactform-message" rows="6" cols="30"></textarea>
 										</div>
 
 										<div class="col-12 form-group">
 											<button
 												class="button button-rounded button-xlarge m-0 center font-weight-medium nott ls0 font-weight-normal"
-												type="submit" id="template-contactform-submit"
-												name="template-contactform-submit" value="submit">Send
+												type="submit" id="contactform-submit"
+												name="contactform-submit" value="submit">Send
 												Message</button>
 										</div>
 									</div>
-									<input type="hidden" name="prefix" value="template-contactform-">
+									<input type="hidden" name="prefix" value="contactform-">
 								</form>
 							</div>
 					</div>
@@ -272,6 +271,28 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="js/functions.js"></script>
+
+	<script>
+        document.getElementById('contactform-submit').addEventListener('click', function () {
+            // Replace with the desired phone number (include country code, but no "+" or "00").
+            const phoneNumber = '60176281472'; // Example: '60123456789' for Malaysia.
+			const name = document.getElementById('contactform-name').value.trim();
+			const phone = document.getElementById('contactform-phone').value.trim(); 
+    		const companyName = document.getElementById('contactform-company').value.trim(); 
+    		const subject = document.getElementById('contactform-message').value.trim();
+            
+            // Replace with your desired message (URL-encoded).
+			const fullMessage = `Inquiry Form from Website
+								 \n*Name:* ${name}\n*Phone:* ${phone}\n*Company:* ${companyName}\n*Message:* ${subject}`;
+    		const encodedMessage = encodeURIComponent(fullMessage);
+            
+            // Construct the WhatsApp URL.
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Redirect the user to WhatsApp.
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 
 </body>
 

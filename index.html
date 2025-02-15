@@ -50,21 +50,15 @@
 		.counter span {
 			color: #053097;
 		}
-		.icons-list li{
-			font-size: 16px!important;
+		.icons-list li {
+			font-size: 16px !important;
 		}
-		.icon-size{
+		.icon-size {
 			width: 30%;
 		}
-		@media(max-width: 767px){
-			.icon-size{
+		@media(max-width: 767px) {
+			.icon-size {
 				width: 25%;
-			}
-		}
-		@media (max-width: 767px) {
-			.video-wrap video {
-				width: 100%; /* Adjust width for mobile */
-				height: auto; /* Maintain aspect ratio */
 			}
 		}
 	</style>
@@ -146,29 +140,12 @@
 		<section id="content">
 
 			<div class="content-wrap pt-0 pb-0">
-				<section id="slider" class="slider-element min-vh-100 dark include-header"
-					style="margin-top: -100.8px;">
-					<div class="slider-inner">
-
-						<!-- <div class="container">
-							<div class="slider-caption slider-caption-center">
-								<h2 data-animate="fadeInUp" class="fadeInUp nott ls0 animated">Trimy Fire
-									Tech Systems</h2>
-							</div>
-						</div> -->
-
-						<div class="video-wrap" style="z-index: 1;">
-							<video poster="images/home-banner.jpg" preload="auto" loop autoplay muted>
-								<source src="videos/TRIMY_EN.mp4" type="video/mp4">
-								<source src="videos/TRIMY_CN.mp4" type="video/mp4">
-								<!-- Fallback content -->
-								Your browser does not support the video tag.
-							</video>
-							<!-- <div class="video-overlay" style="background-color: rgba(0,0,0,0.45);"></div> -->
-						</div>
-
-					</div>
-				</section>
+				<div>
+					<video controls autoplay loop muted style="width: 100%; object-fit: cover">
+						<source src="videos/TRIMY_EN.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
 				<div class="section mt-0 pt-md-5 pt-0 mb-0 bg-white">
 					<div class="container clearfix">
 						<div class="row justify-content-between align-items-center">

@@ -30,7 +30,7 @@
 	background-color: var(--themecolor, #267DF4);
 	color: #FFF;
 	padding: 10px 14px;
-	border-radius: 3px;
+	border-radius: 8px;
 }
 
 .top-phone i {

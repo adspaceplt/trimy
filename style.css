@@ -9267,15 +9267,15 @@ body:not(.device-touch) .button.button-full strong {
 .button-border.button-yellow:hover,
 .button-border.button-yellow.button-fill.button-light:hover { color: #333 !important; }
 
-.button-green { background-color: #59BA41; }
+.button-green { background-color: #25D366; }
 .button-3d.button-green:hover,
 .button-reveal.button-green:hover,
 .button-border.button-green:hover,
 .button-border.button-green.button-fill::before { background-color: #59BA41 !important; }
 
 .button-border.button-green {
-	color: #59BA41;
-	border-color: #59BA41;
+	color: #25D366;
+	border-color: #25D366;
 }
 
 .button-brown { background-color: #774F38; }

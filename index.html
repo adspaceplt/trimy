@@ -61,6 +61,12 @@
 				width: 25%;
 			}
 		}
+		@media (max-width: 767px) {
+			.video-wrap video {
+				width: 100%; /* Adjust width for mobile */
+				height: auto; /* Maintain aspect ratio */
+			}
+		}
 	</style>
 
 </head>
@@ -152,8 +158,7 @@
 						</div> -->
 
 						<div class="video-wrap" style="z-index: 1;">
-							<video poster="images/home-banner.jpg" preload="auto" loop autoplay muted
-								style="width: 1250.13px; height: 703.2px; left: -173.467px;">
+							<video poster="images/home-banner.jpg" preload="auto" loop autoplay muted>
 								<source src="videos/TRIMY_EN.mp4" type="video/mp4">
 								<source src="videos/TRIMY_CN.mp4" type="video/mp4">
 								<!-- Fallback content -->
@@ -164,14 +169,6 @@
 
 					</div>
 				</section>
-				<!-- <section id="page-title" class="page-title-center d-flex align-items-center vh-60"
-					style="background-image: url(images/home-banner.jpg)">
-					<div class="container clearfix">
-						<h1 class="ls0 nott text-white" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.5);">Trimy Fire
-							Tech Systems</h1>
-					</div>
-				</section> -->
-
 				<div class="section mt-0 pt-md-5 pt-0 mb-0 bg-white">
 					<div class="container clearfix">
 						<div class="row justify-content-between align-items-center">

@@ -162,11 +162,18 @@
 			width: 120px;
 		}
 
+		/* Main gallery: height follows each image (see adaptiveHeight); avoid tall viewport + black bars */
+		.carousel-main .carousel-cell {
+			min-height: 0;
+			background: #FAFAFA;
+		}
+
 		/* Atelierbram edit */
 		.carousel-main img {
 			display: block;
 			margin: 0 auto;
 			width: 100%;
+			height: auto;
 		}
 		.custom-container{
 			max-width: 1000px;
@@ -379,7 +386,7 @@
 
 						<div class="custom-container">
 							<!-- Flickity HTML init -->
-							<div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
+							<div class="carousel carousel-main" data-flickity='{ "pageDots": false, "adaptiveHeight": true, "imagesLoaded": true }'>
 								<div class="carousel-cell"><img src="images/gallery/about/1.jpeg" /></div>
 								<!-- <div class="carousel-cell"><img src="images/gallery/about/2.jpeg" /></div> -->
 								<div class="carousel-cell"><img src="images/gallery/about/3.jpg" /></div>
@@ -406,6 +413,97 @@
 								<div class="carousel-cell"><img src="images/gallery/about/24.jpg" /></div>
 								<div class="carousel-cell"><img src="images/gallery/about/25.jpg" /></div>
 								<div class="carousel-cell"><img src="images/gallery/about/26.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/27.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/28.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/29.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/30.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/31.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/32.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/33.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/34.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/35.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/36.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/37.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/38.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/39.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/40.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/41.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/42.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/43.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/44.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/45.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/46.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/47.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/48.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/49.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/50.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/51.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/52.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/53.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/54.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/55.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/56.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/57.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/58.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/59.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/60.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/61.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/62.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/63.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/64.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/65.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/66.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/67.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/68.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/69.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/70.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/71.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/72.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/73.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/74.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/75.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/76.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/77.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/78.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/79.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/80.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/81.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/82.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/83.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/84.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/85.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/86.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/87.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/88.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/89.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/90.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/91.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/92.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/93.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/94.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/95.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/96.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/97.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/98.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/99.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/100.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/101.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/102.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/103.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/104.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/105.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/106.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/107.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/108.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/109.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/110.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/111.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/112.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/113.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/114.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/115.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/116.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/117.jpg" /></div>
 							</div>
 
 							<div class="carousel carousel-nav"
@@ -436,6 +534,97 @@
 								<div class="carousel-cell"><img src="images/gallery/about/24.jpg" /></div>
 								<div class="carousel-cell"><img src="images/gallery/about/25.jpg" /></div>
 								<div class="carousel-cell"><img src="images/gallery/about/26.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/27.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/28.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/29.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/30.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/31.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/32.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/33.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/34.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/35.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/36.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/37.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/38.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/39.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/40.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/41.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/42.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/43.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/44.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/45.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/46.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/47.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/48.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/49.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/50.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/51.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/52.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/53.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/54.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/55.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/56.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/57.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/58.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/59.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/60.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/61.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/62.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/63.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/64.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/65.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/66.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/67.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/68.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/69.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/70.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/71.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/72.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/73.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/74.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/75.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/76.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/77.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/78.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/79.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/80.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/81.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/82.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/83.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/84.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/85.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/86.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/87.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/88.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/89.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/90.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/91.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/92.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/93.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/94.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/95.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/96.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/97.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/98.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/99.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/100.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/101.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/102.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/103.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/104.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/105.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/106.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/107.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/108.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/109.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/110.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/111.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/112.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/113.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/114.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/115.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/116.jpg" /></div>
+								<div class="carousel-cell"><img src="images/gallery/about/117.jpg" /></div>
 							</div>
 
 						</div>

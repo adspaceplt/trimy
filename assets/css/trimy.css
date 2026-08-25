@@ -129,7 +129,7 @@ sub { font-size: 0.72em; }
 
 /* ---------- header ---------- */
 .hdr {
-	position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,.94);
+	position: sticky; top: 0; z-index: 90; background: rgba(255,255,255,.94);
 	backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px);
 	border-bottom: 1px solid var(--line-soft);
 	transition: box-shadow .35s var(--ease);
@@ -161,6 +161,7 @@ sub { font-size: 0.72em; }
 .hdr__cta .btn { padding: 13px 20px; min-height: 44px; font-size: 14.5px; }
 
 .navtoggle {
+	position: relative; z-index: 95;
 	display: none; width: 46px; height: 46px; align-items: center; justify-content: center;
 	background: none; border: 1px solid var(--line); border-radius: var(--r-sm); cursor: pointer; padding: 0;
 }
@@ -291,7 +292,7 @@ sub { font-size: 0.72em; }
 
 /* ---------- floating WhatsApp ---------- */
 .wa-float {
-	position: fixed; right: 24px; bottom: 24px; z-index: 80;
+	position: fixed; right: 24px; bottom: 24px; z-index: 50;
 	width: 58px; height: 58px; border-radius: 50%; background: var(--wa);
 	display: flex; align-items: center; justify-content: center;
 	box-shadow: 0 10px 26px -8px rgba(31,175,84,.7);
@@ -391,7 +392,7 @@ sub { font-size: 0.72em; }
 		padding: 88px 24px 32px; box-shadow: -12px 0 40px -18px rgba(0,0,0,.4);
 		transform: translateX(100%); visibility: hidden;
 		transition: transform .38s var(--ease), visibility 0s linear .38s;
-		z-index: 70; overflow-y: auto; -webkit-overflow-scrolling: touch;
+		z-index: 80; overflow-y: auto; -webkit-overflow-scrolling: touch;
 	}
 	.nav.is-open {
 		transform: none; visibility: visible;
@@ -401,7 +402,7 @@ sub { font-size: 0.72em; }
 	.nav a::after { display: none; }
 	.nav a[aria-current="page"] { color: var(--brand); }
 	.nav__cta { display: flex; margin-top: 20px; flex-direction: column; gap: 10px; }
-	.navscrim { position: fixed; inset: 0; background: rgba(10,14,20,.45); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); z-index: 65; }
+	.navscrim { position: fixed; inset: 0; background: rgba(10,14,20,.45); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); z-index: 60; }
 	.navscrim.is-open { opacity: 1; pointer-events: auto; }
 	body.nav-open { overflow: hidden; }
 	.hdr__cta .btn { display: none; }
@@ -674,7 +675,7 @@ sub { font-size: 0.72em; }
 	.reqsel { padding: 24px 18px; border-radius: var(--r-lg); }
 
 	.actionbar {
-		position: fixed; left: 0; right: 0; bottom: 0; z-index: 75;
+		position: fixed; left: 0; right: 0; bottom: 0; z-index: 55;
 		display: flex; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
 		background: rgba(255,255,255,.97); border-top: 1px solid var(--line);
 		box-shadow: 0 -6px 24px -12px rgba(0,0,0,.28);

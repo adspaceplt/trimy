@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://trimyfire.com.my/</loc><lastmod>2026-08-25</lastmod><priority>1.00</priority></url>
 <url><loc>https://trimyfire.com.my/services.html</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
-<url><loc>https://trimyfire.com.my/products.html</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
-<url><loc>https://trimyfire.com.my/products-fire-protection-systems.html</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
-<url><loc>https://trimyfire.com.my/products-fire-extinguishers.html</loc><lastmod>2026-08-25</lastmod><priority>0.85</priority></url>
-<url><loc>https://trimyfire.com.my/products-ev-fire-safety.html</loc><lastmod>2026-08-25</lastmod><priority>0.85</priority></url>
+<url><loc>https://trimyfire.com.my/products/</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
+<url><loc>https://trimyfire.com.my/products/fire-protection-systems/</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
+<url><loc>https://trimyfire.com.my/products/fire-extinguishers/</loc><lastmod>2026-08-25</lastmod><priority>0.85</priority></url>
+<url><loc>https://trimyfire.com.my/products/ev-fire-safety/</loc><lastmod>2026-08-25</lastmod><priority>0.85</priority></url>
 <url><loc>https://trimyfire.com.my/about.html</loc><lastmod>2026-08-25</lastmod><priority>0.70</priority></url>
 <url><loc>https://trimyfire.com.my/contact.html</loc><lastmod>2026-08-25</lastmod><priority>0.80</priority></url>
 </urlset>

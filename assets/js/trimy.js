@@ -36,7 +36,7 @@
 		});
 		// reset when resizing back to desktop
 		window.addEventListener('resize', function () {
-			if (window.innerWidth > 900) setOpen(false);
+			if (window.innerWidth > 1024) setOpen(false);
 		});
 	}
 

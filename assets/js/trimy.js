@@ -36,7 +36,7 @@
 		});
 		// reset when resizing back to desktop
 		window.addEventListener('resize', function () {
-			if (window.innerWidth > 900) setOpen(false);
+			if (window.innerWidth > 1024) setOpen(false);
 		});
 	}
 
@@ -143,8 +143,29 @@
 		els.forEach(function (el) { io.observe(el); });
 	}
 
+	/* ---------- company video: load only on demand ---------- */
+	function initVideo() {
+		var btn = document.querySelector('.vplay');
+		var vid = document.getElementById('company-video');
+		if (!btn || !vid) return;
+
+		btn.addEventListener('click', function () {
+			btn.hidden = true;
+			vid.preload = 'auto';
+			vid.controls = true;   // native controls only once playback starts
+			var p = vid.play();
+			if (p && p.catch) p.catch(function () {
+				btn.hidden = false;
+				vid.controls = false;
+			});
+		});
+		vid.addEventListener('pause', function () {
+			if (vid.currentTime === 0) btn.hidden = false;
+		});
+	}
+
 	function init() {
-		initNav(); initHeader(); initReveal(); initRouter(); initForm(); initCounters();
+		initNav(); initHeader(); initReveal(); initRouter(); initForm(); initCounters(); initVideo();
 	}
 
 	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

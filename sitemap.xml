@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://trimyfire.com.my/</loc><lastmod>2026-08-25</lastmod><priority>1.00</priority></url>
-<url><loc>https://trimyfire.com.my/services.html</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
-<url><loc>https://trimyfire.com.my/products/</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
-<url><loc>https://trimyfire.com.my/products/fire-protection-systems/</loc><lastmod>2026-08-25</lastmod><priority>0.90</priority></url>
-<url><loc>https://trimyfire.com.my/products/fire-extinguishers/</loc><lastmod>2026-08-25</lastmod><priority>0.85</priority></url>
-<url><loc>https://trimyfire.com.my/products/ev-fire-safety/</loc><lastmod>2026-08-25</lastmod><priority>0.85</priority></url>
-<url><loc>https://trimyfire.com.my/about.html</loc><lastmod>2026-08-25</lastmod><priority>0.70</priority></url>
-<url><loc>https://trimyfire.com.my/contact.html</loc><lastmod>2026-08-25</lastmod><priority>0.80</priority></url>
+  <url>
+    <loc>https://trimyfire.com.my/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/services/fire-protection-systems/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/services/fire-suppression-systems/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/services/wet-chemical-system/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/services/maintenance-servicing-fire-systems/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/fire-extinguishers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/fire-extinguishers-1kg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/fire-extinguishers-3kg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/fire-extinguishers-maintenance/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/ev-fire-safety/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/products/ev-fire-blanket/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trimyfire.com.my/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -277,7 +277,7 @@ sub { font-size: 0.72em; }
 
 /* ---------- footer ---------- */
 .ftr { background: #0E1319; color: #99A2AE; padding: 64px 0 0; margin-top: 8px; }
-.ftr__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 48px; }
+.ftr__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; gap: 36px; padding-bottom: 48px; }
 .ftr h4 { font-family: var(--sans); font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; }
 .ftr a { color: #99A2AE; font-size: 14.5px; }
 .ftr a:hover { color: #fff; }
@@ -1544,4 +1544,45 @@ sub { font-size: 0.72em; }
 		letter-spacing: .04em;
 	}
 	.site-premium .wa-float { display: none; }
+}
+
+/* ---------------------------------------------------------------- inner pages
+   Product and service detail pages: intro prose, lead product shot and the
+   specification table. Everything else on these pages reuses existing
+   components (.pbanner, .ticks, .faq, .cta, .btn). */
+.prose { max-width: 68ch; }
+.prose p { font-size: 16.5px; line-height: 1.68; color: var(--body); margin: 0 0 15px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose p:first-child { font-size: 18px; color: var(--ink); }
+
+.leadsplit { display: grid; grid-template-columns: 400px 1fr; gap: 48px; align-items: start; }
+.leadmedia {
+	border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface-alt);
+	display: grid; place-items: center; padding: 30px;
+}
+.leadmedia img { width: 100%; height: auto; max-height: 340px; object-fit: contain; display: block; }
+
+/* .section--tight is defined before the premium block raises .section to 88px,
+   so it needs restating at the same specificity to survive on these pages. */
+.site-premium:not(.home-industrial) .section--tight { padding: 52px 0; }
+
+.spectable-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-md); }
+.spectable { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 380px; background: var(--surface); }
+.spectable th, .spectable td { padding: 12px 18px; border-bottom: 1px solid var(--line-soft); text-align: left; }
+.spectable tr:last-child th, .spectable tr:last-child td { border-bottom: 0; }
+.spectable th {
+	width: 42%; font-weight: 600; color: var(--ink); background: var(--surface-alt);
+	font-family: var(--technical, var(--sans)); letter-spacing: .02em;
+}
+.spectable td { color: var(--body); }
+
+@media (max-width: 900px) {
+	.leadsplit { grid-template-columns: 1fr; gap: 30px; }
+	.leadmedia { max-width: 420px; }
+}
+
+@media (max-width: 640px) {
+	.leadsplit { grid-template-columns: 1fr; gap: 28px; }
+	.leadmedia { padding: 20px; }
+	.prose p:first-child { font-size: 16.5px; }
 }

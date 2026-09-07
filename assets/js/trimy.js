@@ -36,7 +36,38 @@
 		});
 		// reset when resizing back to desktop
 		window.addEventListener('resize', function () {
-			if (window.innerWidth > 1024) setOpen(false);
+			if (window.innerWidth > 1024) { setOpen(false); closeAllGroups(); }
+		});
+
+		/* submenu accordions. Desktop opens them on hover and focus through CSS
+		   alone, so this only has to drive the mobile panel. */
+		var groups = nav.querySelectorAll('[data-navgrp]');
+		function closeAllGroups() {
+			Array.prototype.forEach.call(groups, function (g) {
+				g.classList.remove('is-open');
+				var b = g.querySelector('.navgrp__t');
+				if (b) b.setAttribute('aria-expanded', 'false');
+			});
+		}
+		Array.prototype.forEach.call(groups, function (g) {
+			var btn = g.querySelector('.navgrp__t');
+			if (!btn) return;
+			btn.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				var open = !g.classList.contains('is-open');
+				closeAllGroups();
+				g.classList.toggle('is-open', open);
+				btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+			});
+		});
+		// a section containing the current page starts expanded on mobile
+		Array.prototype.forEach.call(groups, function (g) {
+			if (g.hasAttribute('data-insection') && window.innerWidth <= 1024) {
+				g.classList.add('is-open');
+				var b = g.querySelector('.navgrp__t');
+				if (b) b.setAttribute('aria-expanded', 'true');
+			}
 		});
 	}
 

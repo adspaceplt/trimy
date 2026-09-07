@@ -1546,114 +1546,90 @@ sub { font-size: 0.72em; }
 	.site-premium .wa-float { display: none; }
 }
 
-/* ---------------------------------------------------------------- inner pages
-   Product and service detail pages: intro prose, lead product shot and the
-   specification table. Everything else on these pages reuses existing
-   components (.pbanner, .ticks, .faq, .cta, .btn). */
-.prose { max-width: 68ch; }
-.prose p { font-size: 16.5px; line-height: 1.68; color: var(--body); margin: 0 0 15px; }
-.prose p:last-child { margin-bottom: 0; }
-.prose p:first-child { font-size: 18px; color: var(--ink); }
-
-.leadsplit { display: grid; grid-template-columns: 400px 1fr; gap: 48px; align-items: start; }
-.leadmedia {
-	border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface-alt);
-	display: grid; place-items: center; padding: 30px;
-}
-.leadmedia img { width: 100%; height: auto; max-height: 340px; object-fit: contain; display: block; }
-
-/* .section--tight is defined before the premium block raises .section to 88px,
-   so it needs restating at the same specificity to survive on these pages. */
-.site-premium:not(.home-industrial) .section--tight { padding: 52px 0; }
-
-.spectable-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-md); }
-.spectable { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 380px; background: var(--surface); }
-.spectable th, .spectable td { padding: 12px 18px; border-bottom: 1px solid var(--line-soft); text-align: left; }
-.spectable tr:last-child th, .spectable tr:last-child td { border-bottom: 0; }
-.spectable th {
-	width: 42%; font-weight: 600; color: var(--ink); background: var(--surface-alt);
-	font-family: var(--technical, var(--sans)); letter-spacing: .02em;
-}
-.spectable td { color: var(--body); }
-
-@media (max-width: 900px) {
-	.leadsplit { grid-template-columns: 1fr; gap: 30px; }
-	.leadmedia { max-width: 420px; }
-}
-
-@media (max-width: 640px) {
-	.leadsplit { grid-template-columns: 1fr; gap: 28px; }
-	.leadmedia { padding: 20px; }
-	.prose p:first-child { font-size: 16.5px; }
-}
-
 /* ------------------------------------------------- inner page visual blocks
-   Card grids, work photography and the two drawn diagrams. These exist to
-   break up copy that otherwise reads as a wall of text. */
-.icards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
-.icard {
-	position: relative; background: var(--surface); border: 1px solid var(--line);
-	border-radius: var(--r-md); padding: 18px 18px 18px 20px; display: flex; gap: 13px;
-	align-items: flex-start; transition: border-color .3s var(--ease), transform .3s var(--ease);
-}
-.icard:hover { border-color: var(--brand); transform: translateY(-3px); }
-.icard__n {
-	font-family: var(--technical, var(--sans)); font-size: 13px; font-weight: 700;
-	color: var(--brand); background: var(--brand-tint); border-radius: 5px;
-	padding: 3px 7px; flex-shrink: 0; letter-spacing: .04em;
-}
-.icard p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--body); }
+   Corporate treatment: rules, whitespace and typography carry the structure.
+   Deliberately no tinted pills, no lifting cards, no numbered badges on lists
+   that are not sequences. Radii stay small so blocks read as documents rather
+   than app surfaces. */
+.prose { max-width: 62ch; }
+.prose p { font-size: 17px; line-height: 1.72; color: var(--body); margin: 0 0 18px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose p:first-child { font-size: 19px; line-height: 1.62; color: var(--ink); }
 
-.photofig { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+/* section headings get room above the content they introduce */
+.section > .wrap > h2 { margin-bottom: 30px; }
+
+.leadsplit { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.618fr); gap: 62px; align-items: start; }
+.leadmedia {
+	border: 1px solid var(--line); background: var(--surface-alt);
+	display: grid; place-items: center; padding: 38px; border-radius: var(--r-sm);
+}
+.leadmedia img { width: 100%; height: auto; max-height: 330px; object-fit: contain; display: block; }
+
+/* capability lists: a ruled two column register */
+.crows { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 56px; }
+.crow { border-top: 1px solid var(--line); padding: 17px 0 18px; }
+.crow p { margin: 0; font-size: 15.5px; line-height: 1.58; color: var(--body); }
+
+/* fire classes: squared plates, the letter is the standard designation */
+.fclasses { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0 46px; }
+.fclass { display: flex; gap: 18px; align-items: baseline; border-top: 2px solid var(--brand); padding: 20px 0 0; }
+.fclass__l {
+	font-family: var(--technical, var(--sans)); font-size: 34px; font-weight: 700;
+	color: var(--brand); line-height: 1; flex-shrink: 0; letter-spacing: -.02em;
+}
+.fclass strong { display: block; font-size: 16px; color: var(--ink); }
+.fclass span:not(.fclass__l) { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+.fclass__note { margin: 34px 0 0; font-size: 15px; color: var(--muted); max-width: 62ch; }
+
+/* thermal runaway: a numbered sequence, where the numbering is real */
+.runaway { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0 34px; }
+.runstep { border-top: 1px solid var(--line); padding: 20px 0 0; display: flex; flex-direction: column; gap: 9px; }
+.runstep--fix { border-top: 2px solid var(--brand); }
+.runstep__n {
+	font-family: var(--technical, var(--sans)); font-size: 15px; font-weight: 700;
+	color: var(--muted); letter-spacing: .06em;
+}
+.runstep--fix .runstep__n { color: var(--brand); text-transform: uppercase; font-size: 12.5px; letter-spacing: .12em; }
+.runstep strong { font-size: 16px; color: var(--ink); }
+.runstep__d { font-size: 14.5px; color: var(--body); line-height: 1.55; }
+
+.photofig { display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 .photofig figure { margin: 0; }
 .photofig img {
 	width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block;
-	border-radius: var(--r-md); border: 1px solid var(--line); background: var(--surface-alt);
+	border-radius: var(--r-sm); background: var(--surface-alt);
 }
-.photofig figcaption { margin-top: 9px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+.photofig figcaption { margin-top: 12px; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 
-.fclasses { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
-.fclass {
-	display: flex; gap: 14px; align-items: center; background: var(--surface);
-	border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px;
+.spectable-wrap { overflow-x: auto; border-top: 2px solid var(--brand); }
+.spectable { width: 100%; border-collapse: collapse; font-size: 15.5px; min-width: 380px; max-width: 760px; }
+.spectable th, .spectable td { padding: 15px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.spectable th {
+	width: 40%; font-weight: 600; color: var(--ink); padding-right: 28px;
+	font-family: var(--technical, var(--sans)); letter-spacing: .02em; font-size: 16px;
 }
-.fclass__l {
-	width: 42px; height: 42px; border-radius: 9px; color: #fff; flex-shrink: 0;
-	display: grid; place-items: center; font-family: var(--technical, var(--sans));
-	font-size: 21px; font-weight: 700;
-}
-.fclass strong { display: block; font-size: 15.5px; color: var(--ink); }
-.fclass span:not(.fclass__l) { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
-.fclass__note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+.spectable td { color: var(--body); }
 
-.runaway { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-.runstep {
-	background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md);
-	padding: 18px; display: flex; flex-direction: column; gap: 7px;
-	border-top: 3px solid var(--alert);
-}
-.runstep--fix { border-top-color: var(--wa); }
-.runstep__n {
-	width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
-	background: var(--alert-tint); color: var(--alert); font-weight: 700; font-size: 14px;
-	font-family: var(--technical, var(--sans));
-}
-.runstep--fix .runstep__n { background: #E4F2EA; color: #1B6E46; }
-.runstep strong { font-size: 15.5px; color: var(--ink); }
-.runstep__d { font-size: 13.5px; color: var(--body); line-height: 1.5; }
+.kdiagram { border-top: 1px solid var(--line); padding: 30px 0 0; overflow-x: auto; }
 
-.kdiagram {
-	background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
-	padding: 22px; overflow-x: auto;
-}
-.kdiagram svg { display: block; width: 100%; min-width: 520px; height: auto; }
+/* answers were running the full width of the panel, about 101 characters a
+   line; 66ch keeps them in the comfortable range without narrowing the panel */
+.faq__a p { max-width: 66ch; }
+.kdiagram svg { display: block; width: 100%; max-width: 760px; min-width: 520px; height: auto; }
 
+@media (max-width: 900px) {
+	.leadsplit { grid-template-columns: 1fr; gap: 34px; }
+	.leadmedia { max-width: 380px; }
+	.fclasses, .runaway { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 34px; }
+}
 @media (max-width: 640px) {
-	.photofig { grid-template-columns: 1fr 1fr; gap: 12px; }
-	.photofig figcaption { font-size: 12px; }
-	.icard { padding: 15px; }
+	.crows, .fclasses, .runaway { grid-template-columns: 1fr; gap: 0; }
+	.leadmedia { padding: 24px; max-width: none; }
+	.prose p:first-child { font-size: 17px; }
+	.photofig { grid-template-columns: 1fr 1fr; gap: 16px; }
+	.section > .wrap > h2 { margin-bottom: 22px; }
 }
-
 /* ---------------------------------------------------------- nav dropdowns
    One markup structure, two behaviours: a hover/focus panel on desktop, an
    accordion inside the existing off-canvas panel on mobile. The mobile

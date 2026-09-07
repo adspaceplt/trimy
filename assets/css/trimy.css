@@ -1630,6 +1630,32 @@ sub { font-size: 0.72em; }
 	.photofig { grid-template-columns: 1fr 1fr; gap: 16px; }
 	.section > .wrap > h2 { margin-bottom: 22px; }
 }
+/* ------------------------------------------------------------- hub register
+   The index of child pages on /services and /products. A ruled register in
+   the same idiom as the inner pages: rules and type, no cards, no lift. */
+.hublist { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 56px; }
+.hubrow {
+	display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+	border-top: 1px solid var(--line); padding: 19px 0 20px; color: inherit;
+	transition: border-color .25s var(--ease);
+}
+.hubrow:hover { border-top-color: var(--brand); }
+.hubrow__txt { min-width: 0; }
+.hubrow__t {
+	display: block; font-size: 16.5px; font-weight: 600; color: var(--ink);
+	line-height: 1.32; transition: color .2s var(--ease);
+}
+.hubrow:hover .hubrow__t { color: var(--brand); }
+.hubrow__d { display: block; font-size: 14px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.hubrow__a { flex-shrink: 0; color: var(--line); transition: color .25s var(--ease), transform .25s var(--ease); }
+.hubrow:hover .hubrow__a { color: var(--brand); transform: translateX(3px); }
+.hubrow:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+@media (max-width: 720px) {
+	.hublist { grid-template-columns: 1fr; gap: 0; }
+	.hubrow { padding: 16px 0 17px; }
+}
+
 /* ---------------------------------------------------------- nav dropdowns
    One markup structure, two behaviours: a hover/focus panel on desktop, an
    accordion inside the existing off-canvas panel on mobile. The mobile

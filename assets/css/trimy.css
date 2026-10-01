@@ -1862,3 +1862,7 @@ sub { font-size: 0.72em; }
 	body.nav-open { overflow-x: clip; overflow-y: visible; }
 	html:has(> body.nav-open) { overflow: hidden; }
 }
+
+/* enquiry form: WhatsApp and email side by side, stacked on phones */
+.form__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 640px) { .form__actions .btn { flex: 1 1 100%; } }

@@ -108,6 +108,7 @@
 	   Fire Systems line. Everything else, including Bomba renewals and
 	   equipment, goes to the Products and General line.                 */
 	var FIRE_SYSTEMS = '60127799808', GENERAL = '601155597808';
+	var ENQUIRY_EMAIL = 'enquiry@trimyfire.com.my';
 	var SYSTEMS_WORK = [
 		'New installation or system upgrade',
 		'Scheduled maintenance contract',
@@ -147,6 +148,18 @@
 				(company ? 'Company: ' + company + '\n' : '') +
 				(type ? 'Type of work: ' + type + '\n' : '') +
 				'\nDetails:\n' + message;
+			var byEmail = e.submitter && e.submitter.value === 'email';
+			if (byEmail) {
+				// mailto needs no server; the visitor's own mail app sends it
+				window.location.href = 'mailto:' + ENQUIRY_EMAIL +
+					'?subject=' + encodeURIComponent('Website enquiry' + (type ? ': ' + type : '')) +
+					'&body=' + encodeURIComponent(body);
+				if (status) {
+					status.textContent = 'Your email app should open with the message ready. Press send to reach us. If nothing opened, write to ' + ENQUIRY_EMAIL + '.';
+					status.style.color = '';
+				}
+				return;
+			}
 			var line = SYSTEMS_WORK.indexOf(type) > -1 ? FIRE_SYSTEMS : GENERAL;
 			window.open('https://wa.me/' + line + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
 			if (status) {

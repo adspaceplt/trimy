@@ -103,21 +103,16 @@
 		for (var j = 0; j < els.length; j++) io.observe(els[j]);
 	}
 
-	/* ---------- WhatsApp job router ----------
-	   Each [data-job] sends a pre-written enquiry so the first message
-	   already says what the job is.                                    */
-	function initRouter() {
-		var WA = '60127799808';
-		document.querySelectorAll('[data-job]').forEach(function (el) {
-			el.addEventListener('click', function () {
-				var msg = 'Hello Trimy Fire Tech,\n\nEnquiry: ' + el.getAttribute('data-job') +
-					'\n\nSite / building:\nLocation:\nWhen you need it:\n\nThank you.';
-				window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
-			});
-		});
-	}
-
-	/* ---------- enquiry form -> WhatsApp ---------- */
+	/* ---------- enquiry form -> WhatsApp ----------
+	   Fire systems work (installation, maintenance, faults) goes to the
+	   Fire Systems line. Everything else, including Bomba renewals and
+	   equipment, goes to the Products and General line.                 */
+	var FIRE_SYSTEMS = '60127799808', GENERAL = '601155597808';
+	var SYSTEMS_WORK = [
+		'New installation or system upgrade',
+		'Scheduled maintenance contract',
+		'Fault, breakdown or failed inspection'
+	];
 	function initForm() {
 		var form = document.getElementById('enquiry');
 		if (!form) return;
@@ -130,12 +125,20 @@
 			var name = val('f-name'), phone = val('f-phone'), company = val('f-company'),
 			    type = val('f-type'), message = val('f-message');
 
-			if (!name || !phone || !message) {
-				var status = document.getElementById('form-status');
+			var status = document.getElementById('form-status');
+			var missing = [['f-name', name], ['f-phone', phone], ['f-message', message]]
+				.filter(function (f) { return !f[1]; }).map(function (f) { return f[0]; });
+			['f-name', 'f-phone', 'f-message'].forEach(function (id) {
+				var f = document.getElementById(id);
+				if (f) f.setAttribute('aria-invalid', missing.indexOf(id) > -1 ? 'true' : 'false');
+			});
+			if (missing.length) {
 				if (status) {
 					status.textContent = 'Please fill in your name, phone and a short description.';
 					status.style.color = '#C4341F';
 				}
+				var first = document.getElementById(missing[0]);
+				if (first) first.focus();
 				return;
 			}
 			var body = 'Enquiry from trimyfire.com.my\n\n' +
@@ -144,7 +147,12 @@
 				(company ? 'Company: ' + company + '\n' : '') +
 				(type ? 'Type of work: ' + type + '\n' : '') +
 				'\nDetails:\n' + message;
-			window.open('https://wa.me/60127799808?text=' + encodeURIComponent(body), '_blank', 'noopener');
+			var line = SYSTEMS_WORK.indexOf(type) > -1 ? FIRE_SYSTEMS : GENERAL;
+			window.open('https://wa.me/' + line + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
+			if (status) {
+				status.textContent = 'WhatsApp has opened with your message. Press send in WhatsApp to reach us.';
+				status.style.color = '';
+			}
 		});
 	}
 
@@ -195,8 +203,44 @@
 		});
 	}
 
+	/* ---------- gallery arrows ----------
+	   Horizontal galleries hid most of their photos from mouse users.   */
+	function initGalleries() {
+		var chev = function (d) {
+			return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="' +
+				(d < 0 ? 'm15 5-7 7 7 7' : 'm9 5 7 7-7 7') +
+				'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+		};
+		document.querySelectorAll('.gal').forEach(function (gal, n) {
+			if (!gal.id) gal.id = 'gal-' + (n + 1);
+			var bar = document.createElement('div');
+			bar.className = 'gal__ctrl';
+			bar.innerHTML =
+				'<button type="button" class="gal__btn" data-dir="-1" aria-controls="' + gal.id + '" aria-label="Previous photos">' + chev(-1) + '</button>' +
+				'<button type="button" class="gal__btn" data-dir="1" aria-controls="' + gal.id + '" aria-label="Next photos">' + chev(1) + '</button>';
+			gal.parentNode.insertBefore(bar, gal);
+			var btns = bar.querySelectorAll('button');
+			var sync = function () {
+				var overflow = gal.scrollWidth > gal.clientWidth + 4;
+				bar.hidden = !overflow;
+				btns[0].disabled = gal.scrollLeft < 4;
+				btns[1].disabled = gal.scrollLeft + gal.clientWidth >= gal.scrollWidth - 4;
+			};
+			btns.forEach(function (b) {
+				b.addEventListener('click', function () {
+					gal.scrollBy({ left: +b.getAttribute('data-dir') * gal.clientWidth * 0.85, behavior: reduce ? 'auto' : 'smooth' });
+				});
+			});
+			gal.addEventListener('scroll', sync, { passive: true });
+			gal.addEventListener('load', sync, true);   // lazy photos widen the strip as they arrive
+			window.addEventListener('resize', sync);
+			window.addEventListener('load', sync);
+			sync();
+		});
+	}
+
 	function init() {
-		initNav(); initHeader(); initReveal(); initRouter(); initForm(); initCounters(); initVideo();
+		initNav(); initHeader(); initReveal(); initForm(); initCounters(); initVideo(); initGalleries();
 	}
 
 	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

@@ -45,6 +45,8 @@
 html {
 	-webkit-text-size-adjust: 100%;
 	scroll-behavior: smooth;
+	/* in page links land below the sticky header rather than under it */
+	scroll-padding-top: 96px;
 	overflow-x: hidden;
 	overflow-x: clip;
 }
@@ -57,7 +59,11 @@ body {
 	background: var(--surface);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	/* clip, not hidden: hidden turns body into a scroll container, which
+	   silently stopped the sticky header from sticking on every page.
+	   Browsers without clip keep hidden. */
 	overflow-x: hidden;
+	overflow-x: clip;
 }
 img, svg, video, iframe { max-width: 100%; }
 img, video { height: auto; display: block; }
@@ -330,7 +336,10 @@ sub { font-size: 0.72em; }
 .gal::-webkit-scrollbar-thumb { background: #C6CCD4; border-radius: 4px; }
 .gal::-webkit-scrollbar-thumb:hover { background: var(--brand); }
 .gal > * { scroll-snap-align: start; flex: 0 0 clamp(260px, 30%, 380px); border-radius: var(--r-md); overflow: hidden; background: var(--surface-alt); }
-.gal img, .gal video { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.gal video { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+/* photos keep the ratio from their width and height attributes, which
+   reserves their space before they load and keeps lazy loading lazy */
+.gal img { object-fit: cover; display: block; }
 
 /* ---------- misc ---------- */
 .divider { height: 1px; background: var(--line); border: 0; margin: 0; }
@@ -1807,3 +1816,49 @@ sub { font-size: 0.72em; }
 /* Jakob: a product name links to its page where the page exists */
 .pitem__link { color: inherit; }
 .pitem__link:hover { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ==========================================================================
+   Site review fixes
+   ========================================================================== */
+
+/* phone numbers never break across two lines */
+.nw { white-space: nowrap; }
+
+/* galleries: every photo whole at one common height. The photos are a mix
+   of portrait and landscape; a fixed 4:3 frame either showed black bars or
+   cropped heads off the team shots. */
+.gal > * { flex: 0 0 auto; }
+.gal img { width: auto; max-width: none; height: clamp(240px, 26vw, 340px); }
+@media (max-width: 640px) { .gal img { height: 260px; } }
+
+/* gallery arrows: the scroller hid most photos from mouse users */
+.gal__ctrl { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 14px; }
+.gal__ctrl[hidden] { display: none; }
+.gal__btn {
+	width: 44px; height: 44px; display: inline-grid; place-items: center; padding: 0;
+	border: 1px solid var(--line); border-radius: 2px; background: #fff; color: var(--ink); cursor: pointer;
+	transition: border-color .2s, color .2s;
+}
+.gal__btn:hover:not(:disabled) { border-color: var(--brand); color: var(--brand); }
+.gal__btn:disabled { opacity: .35; cursor: default; }
+.gal__btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+@media (hover: none) and (pointer: coarse) { .gal__ctrl { display: none; } }
+
+/* homepage field work: photos fill their tiles, so no caption floats on an
+   empty band under a shorter photo */
+.home-industrial .photostrip img { height: 100%; }
+
+/* detail pages: the question list starts on the same left edge as its heading */
+.faq-heading + .faq { margin-left: 0; }
+
+/* enquiry form: a missing required field is marked, not only described */
+.field [aria-invalid="true"] { border-color: #C4341F; }
+
+/* Lock the page behind the open menu on the root element, not on body.
+   overflow on body made it a scroll container, which unstuck the header and
+   took the menu's close button off screen; with html clipped it did not
+   stop the page scrolling either. Browsers without :has keep the old rule. */
+@supports selector(:has(a)) {
+	body.nav-open { overflow-x: clip; overflow-y: visible; }
+	html:has(> body.nav-open) { overflow: hidden; }
+}
